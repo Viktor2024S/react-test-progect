@@ -1,21 +1,40 @@
-import Header from "../Header/Header";
-import PilotCard from "../PilotCard/PilotCard";
-import officers from "../../officers.json";
+import Alert from "../Alert";
 
 export default function App() {
-  const isOnline = 2 > 5;
   return (
-    <div>
-      <Header />
-      <ul>
-        {officers.map((officer) => {
-          return (
-            <li key={officer.id}>
-              <PilotCard pilot={officer} />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <Alert variant="info" outlined>
+        Would you like to browse our recommended products?
+      </Alert>
+      <Alert variant="error" elevated>
+        There was an error during your last transaction
+      </Alert>
+      <Alert variant="success">
+        Payment received, thank you for your purchase
+      </Alert>
+      <Alert variant="warning">
+        Please update your profile contact information
+      </Alert>
+    </>
   );
 }
+// const App = () => {
+//   return (
+//     <>
+//       <Alert variant="info">
+//         Would you like to browse our recommended products?
+//       </Alert>
+//       <Alert variant="error">
+//         There was an error during your last transaction
+//       </Alert>
+//       <Alert variant="success">
+//         Payment received, thank you for your purchase
+//       </Alert>
+//       <Alert variant="warning">
+//         Please update your profile contact information
+//       </Alert>
+//     </>
+//   );
+// };
+
+// export default App;
